@@ -1,0 +1,10 @@
+<% if @instance.errors.any? %>
+  <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+    <ul>
+      <% @instance.errors.each do |item| %>
+        <li><strong><%= item.attribute %>: </strong><%= item.message %></li>
+      <% end %>
+    </ul>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>

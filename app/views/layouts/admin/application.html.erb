@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- BEGIN HEAD -->
+  <%= render 'layouts/admin/head' %>
+  <!-- END HEAD -->
+  <body>
+    <!-- BEGIN ADMIN CONTENT -->
+    <div id="appAdmin" v-cloak>
+      <!-- BEGIN NAVBAR -->
+      <%= render 'layouts/admin/navbar' %>
+      <%= render partial: 'admin/users/change_password'%>
+      <!-- END NAVBAR -->
+      <div class="container-fluid">
+        <div class="row">
+          <!-- BEGIN SIDEBAR -->
+          <nav id="sidebar" class="col col-md-3 col-lg-2 d-md-block bg-light sidebar d-none position-fixed">
+            <%= render 'layouts/admin/sidebar' %>
+          </nav>
+          <!-- END SIDEBAR -->
+          <div class="col offset-md-3 offset-lg-2 px-5">
+            <%= render "layouts/admin/messages" %>
+            <!-- BEGIN MAIN CONTENT -->
+            <main class="pt-3">
+              <%= yield %>
+              <%= render "layouts/admin/footer" %>
+            </main>
+            <!-- END MAIN CONTENT -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END ADMIN CONTENT -->
+  </body>
+</html>

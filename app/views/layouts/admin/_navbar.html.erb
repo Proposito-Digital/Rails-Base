@@ -1,0 +1,48 @@
+<header class="navbar navbar-expand-md sticky-top navbar-light flex-md-nowrap p-0 shadow">
+  <div class="container-fluid">
+    <a href="/admin" class="navbar-brand col-md-3 col-lg-2 me-0 px-0">
+      <%= image_tag 'logo-white.png', alt: "[Nome do Projeto]", id: "navbar-logo"%>
+    </a>
+    <!-- # Snippet if you want text title
+     <a href="/admin" class="navbar-brand">
+      RAILS BASE
+    </a>
+    -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#HeaderNavbar" aria-controls="HeaderNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="HeaderNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- # Snippet if you want add more nav itens
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+        <span class="navbar-text">
+          Tenant:
+        </span>
+        <% if current_user.admin? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false"><%= current_tenant.present? ? current_tenant.name  : 'Todos' %></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown05">
+              <li>
+                <a class="dropdown-item" href="<%= disable_current_tenant_admin_tenants_path(id: current_user.tenant_id)%>" data-turbo-method="patch">Todos</a>
+              </li>
+              <li>
+              <% Tenant.all.each do | tenant| %>
+                <a class="dropdown-item" href="<%= change_current_tenant_admin_tenant_path(tenant.id)%>" data-turbo-method="patch">
+                  <%= tenant.name%>
+                </a>
+              <% end %>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+        <%= render 'layouts/admin/user_profile' %>
+    </div>
+  </div>
+</header>
+

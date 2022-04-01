@@ -1,0 +1,6 @@
+Style/Documentation:
+  Enabled: false
+Layout/EndOfLine:
+  EnforcedStyle: crlf
+Style/Lambda:
+  EnforcedStyle: literal

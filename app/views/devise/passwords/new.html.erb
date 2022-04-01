@@ -1,0 +1,14 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <h4>Recuperar senha</h4>
+  <p>Digite seu e-mail para receber instruções sobre como recuperar a senha</p>
+  <div class="form-group">
+    <%= label_tag 'Email', nil, class: 'col-form-label' %>
+    <%= text_field_tag "user[email]", nil, id: "login-email", class: "form-control", placeholder: 'Digite o email', autofocus: true %>
+  </div>
+  <div class="form-group mb-0">
+    <div class="text-end mt-3">
+      <button class="btn btn-primary btn-block w-100" type="submit">Enviar</button>
+    </div>
+  </div>
+<% end %>
+

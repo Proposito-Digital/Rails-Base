@@ -1,0 +1,31 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Propósito Digital">
+    <meta name="description" content="">
+    
+    <title>Rails Base! </title>
+    
+    <%= favicon_link_tag 'favicon.png' %>
+
+    <!-- BEGIN STYLES -->
+    <%= stylesheet_link_tag 'styles', preload: true, media: 'all', 'data-turbo-track': 'reload'%>
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <%= yield :stylesheet %>
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- END STYLES -->
+    
+    <!-- BEGIN SCRIPTS -->
+    <%= javascript_importmap_tags %>
+    <!-- BEGIN PAGE SPECIFIC SCRIPTS -->
+    <%= yield :javascript %>
+    <!-- END PAGE SPECIFIC SCRIPTS -->
+    <!-- END SCRIPTS -->
+
+    <!-- BEGIN GLOBAL META TAGS -->
+    <%= action_cable_meta_tag %>
+    <%= csrf_meta_tags %>
+    <!-- END GLOBAL META TAGS -->
+</head>
+

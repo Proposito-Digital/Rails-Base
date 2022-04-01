@@ -1,0 +1,7 @@
+<!-- SHOW ACTION -->
+<%= action_button href: instance_show_path(instance), instance: instance, action: :show?, icon:"bi bi-eye", title: 'Visualizar'%>
+<!-- EDIT ACTION -->
+<%= action_button href: instance_edit_path(instance), instance: instance, action: :edit?, icon:"bi bi-pencil-square", title: 'Editar'%>
+<!-- REMOVE ACTION -->
+<%= modal_button href: instance_remove_path(instance), instance: instance, action: :destroy?, icon:"bi bi-trash", title: 'Remover', modal_id: "modal_destroy_#{instance.id}" %>
+

@@ -1,0 +1,11 @@
+<%= link_to raw("<div class='btn p-0 text-black'><span class=\"bi bi-chevron-left\"></span> Voltar</div>"), instances_index_path %>
+
+<div class="d-flex justify-content-between mt-2">
+  <div>
+    <h3><%= "Novo #{model_singular_translation}" %></h3>
+  </div>
+  <div>
+    <a href=<%= "#{instances_index_path}"%> class="btn btn-outline-secondary">Cancelar</a>
+    <button type="submit" @click="submitForm('<%= 'new_' + instance.class.name.underscore %>')" class="btn btn-primary"><%= "Salvar" %></button>
+  </div>
+</div>

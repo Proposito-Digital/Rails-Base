@@ -1,0 +1,14 @@
+/vendor/*
+/tmp/*
+/log/*
+/public/*
+.rbenv-vars
+docker-compose.override.yml
+/coverage/
+.byebug_history
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+/storage/*
+docker-compose.dev.yml

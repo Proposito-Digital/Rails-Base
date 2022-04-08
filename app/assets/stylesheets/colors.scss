@@ -79,10 +79,10 @@
   --disabled: #969EA9;
   --disabled-light: #d7dde6;
   --disabled-hoover: #6f7276;
-  
 
 
- 
+
+
   --table:#F4F4F8;
   --table-btn:#888888;
 
@@ -96,5 +96,8 @@
   --link: var(--primary);
   --buttom: var(--primary);
 
+  //BOOTSTRAP COLOR
+  --bs-primary: var(--primary);
+  --bs-primary-rgb: 188, 47, 46;
 
 }

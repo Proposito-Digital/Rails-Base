@@ -5,6 +5,7 @@
   left: 0;
   z-index: 100; /* Behind the navbar */
   background-color: var(--background-sidebar) !important;
+  min-width: 20em;
   .nav-item{
     .nav-link{
       font-weight: 500;
@@ -51,6 +52,9 @@
         }
       }
     }
+  }
+  &.collapsed{
+    min-width: 8em;
   }
 }
 

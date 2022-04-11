@@ -34,7 +34,7 @@ module SidebarConcerns
       #   id_collapse: 'tenant-collapse',
       #   policy: :tenant,
       #   url: { controller: 'tenants', action: 'index' },
-      #   active: false,
+      #   active: (controller_path == "admin/users" || controller_path == 'admin/dashboard' ) ,
       #   items: [
       #       {
       #         name: 'Categorias de exames',
@@ -42,7 +42,14 @@ module SidebarConcerns
       #         policy: :tenant,
       #         url: { controller: 'tenants', action: 'index' },
       #         active: (controller_path == "admin/users")
-      #       }
+      #       },
+      #       {
+      #         name: 'Início',
+      #         icon: 'bi bi-house-door',
+      #         policy: :dashboard,
+      #         url: { controller: 'dashboard', action: 'index' },
+      #         active: controller_path == 'admin/dashboard'
+      #       },
       #   ]
       # }
       ]

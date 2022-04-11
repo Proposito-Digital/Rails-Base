@@ -28,30 +28,30 @@ module SidebarConcerns
         active: controller_path == 'admin/tenants'
       },
       # Submenu Example
-      {
-        name: 'Tenants',
-        icon: 'bi bi-people',
-        id_collapse: 'tenant-collapse',
-        policy: :tenant,
-        url: { controller: 'tenants', action: 'index' },
-        active: (controller_path == "admin/users" || controller_path == 'admin/dashboard' ) ,
-        items: [
-            {
-              name: 'Categorias de exames',
-              icon: 'bi bi-card-list',
-              policy: :tenant,
-              url: { controller: 'tenants', action: 'index' },
-              active: (controller_path == "admin/users")
-            },
-            {
-              name: 'Início',
-              icon: 'bi bi-house-door',
-              policy: :dashboard,
-              url: { controller: 'dashboard', action: 'index' },
-              active: controller_path == 'admin/dashboard'
-            },
-        ]
-      }
+      # {
+      #   name: 'Tenants',
+      #   icon: 'bi bi-people',
+      #   id_collapse: 'tenant-collapse',
+      #   policy: :tenant,
+      #   url: { controller: 'tenants', action: 'index' },
+      #   active: (controller_path == "admin/users" || controller_path == 'admin/dashboard' ) ,
+      #   items: [
+      #       {
+      #         name: 'Categorias de exames',
+      #         icon: 'bi bi-card-list',
+      #         policy: :tenant,
+      #         url: { controller: 'tenants', action: 'index' },
+      #         active: (controller_path == "admin/users")
+      #       },
+      #       {
+      #         name: 'Início',
+      #         icon: 'bi bi-house-door',
+      #         policy: :dashboard,
+      #         url: { controller: 'dashboard', action: 'index' },
+      #         active: controller_path == 'admin/dashboard'
+      #       },
+      #   ]
+      # }
       ]
     end
 	end

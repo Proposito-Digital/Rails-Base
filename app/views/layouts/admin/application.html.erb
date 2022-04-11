@@ -8,16 +8,15 @@
     <div id="appAdmin" v-cloak>
       <!-- BEGIN NAVBAR -->
       <%= render 'layouts/admin/navbar' %>
-      <%= render partial: 'admin/users/change_password'%>
       <!-- END NAVBAR -->
       <div class="container-fluid">
         <div class="row">
           <!-- BEGIN SIDEBAR -->
-          <nav id="sidebar" class="col col-md-3 col-lg-2 d-md-block bg-light sidebar d-none position-fixed">
+          <nav id="sidebar" class="col col-md-3 col-lg-2 d-md-block bg-light sidebar d-none p-0 vh-91" style="height: 91vh;">
             <%= render 'layouts/admin/sidebar' %>
           </nav>
           <!-- END SIDEBAR -->
-          <div class="col offset-md-3 offset-lg-2 px-5">
+          <div class="col px-5 vh-91" style="height: 91vh;overflow-y: scroll;">
             <%= render "layouts/admin/messages" %>
             <!-- BEGIN MAIN CONTENT -->
             <main class="pt-3">

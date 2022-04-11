@@ -30,9 +30,9 @@
   --primary-dark:#992929;
   --primary-hoover: #7952B2;
   
-  --primary-light: ;
- 
-
+  --primary-light: #de6b6b;
+  --primary-lighter: #f8c3c3;
+  
   // SECONDARY
   --secundary:#000000;
 
@@ -51,8 +51,6 @@
 
   // BACKGROUND
   --background-primary: var(--primary);
-
-
 
 
   // SEMANTICS
@@ -79,10 +77,7 @@
   --disabled: #969EA9;
   --disabled-light: #d7dde6;
   --disabled-hoover: #6f7276;
-  
 
-
- 
   --table:#F4F4F8;
   --table-btn:#888888;
 
@@ -96,5 +91,22 @@
   --link: var(--primary);
   --buttom: var(--primary);
 
+  //BOOTSTRAP COLOR
+  --bs-primary: var(--primary);
+  --bs-primary-rgb: 188, 47, 46;
+}
 
+.btn.btn-primary{
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.pagination .page-item a, a {
+  color: var(--primary);
+  text-decoration: var(--primary);
+
+  &:hover {
+    color: var(--primary-dark);
+    text-decoration-color: var(--primary-dark);
+  }
 }

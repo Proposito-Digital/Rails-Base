@@ -6,6 +6,7 @@
   z-index: 100; /* Behind the navbar */
   background-color: var(--background-sidebar) !important;
   min-width: 20em;
+  transition:0.1s all ease-in-out;
   .nav-item{
     .nav-link{
       font-weight: 500;
@@ -69,6 +70,7 @@
     #pageSubmenu{
       display: none;
     }
+    transition:0.1s all ease-in-out;
   }
   #toggle-sidebar-button{
     display: inline-block;

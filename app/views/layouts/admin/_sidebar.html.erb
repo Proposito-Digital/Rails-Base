@@ -1,15 +1,6 @@
-  <!-- if you want a Menu toogle
-   <div class="menu-toggle">
-    <button type="button" id="sidebarCollapse" class="btn btn-primary-dark">
-      <i id="toggle-sidebar-button" class="bi bi-list button-icon-outline-hidden" ></i>
-      <span class="sr-only">Toggle Menu</span>
-    </button>
-  </div>
-  -->
 <nav id="sidebar" class="d-md-block bg-light sidebar d-none p-0 vh-91 collapsed" style="height: 91vh;">
   <div class="sidebar-toogle-container d-flex justify-content-end mt-4">
-    <button type="button" id="toggle-sidebar-button"> <i class="bi bi-list button-icon-outline-hidden" ></i>
-    </button>
+    <button type="checkbox" id="toggle-sidebar-button" @click="toogleSidebar"> <i class="bi bi-list button-icon-outline-hidden" ></i> </button>
   </div>
   <div class="p-4 pt-5 mt-5">
     <ul class="list-unstyled mb-5">

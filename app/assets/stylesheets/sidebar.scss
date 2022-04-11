@@ -66,8 +66,9 @@
 .menu-toggle {
   display: inline-block;
   position: absolute;
-  left: 296px;
-  margin-top: 1em;
+  top: 45px;
+  right: 0;
+  margin-right: -20px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;

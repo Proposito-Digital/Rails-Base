@@ -74,17 +74,17 @@ export default {
     beforeMount: function() {
         this.setOpened(this.start_opened);
     },
-  template: /*html*/`
-      <div accordion-component >
-          <div header ui-row @click="toggle" class="space-between">
-              <slot name="header"></slot>
-              <div :class="toggleClass">
-                  <i toggle-icon :class="headerIcon" aria-hidden="true"></i>
-              </div>
-          </div>
-          <div body :style="bodyStyle" mt=1>
-              <slot name="body" class="colapsed"></slot>
-          </div>
-      </div>
+    template: /*html*/`
+        <div accordion-component >
+            <div header ui-row @click="toggle" class="space-between">
+                <slot name="header"></slot>
+                <div :class="toggleClass">
+                    <i toggle-icon :class="headerIcon" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div body :style="bodyStyle" mt=1>
+                <slot name="body" class="colapsed"></slot>
+            </div>
+        </div>
     `
 }

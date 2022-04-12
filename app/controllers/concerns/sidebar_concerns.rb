@@ -26,7 +26,7 @@ module SidebarConcerns
         policy: :tenant,
         url: { controller: 'tenants', action: 'index' },
         active: controller_path == 'admin/tenants'
-      }
+      },
       # Submenu Example
       # {
       #   name: 'Tenants',

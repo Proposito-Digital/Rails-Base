@@ -9,22 +9,18 @@
       <!-- BEGIN NAVBAR -->
       <%= render 'layouts/admin/navbar' %>
       <!-- END NAVBAR -->
-      <div class="container-fluid">
-        <div class="row">
-          <!-- BEGIN SIDEBAR -->
-          <nav id="sidebar" class="col col-md-3 col-lg-2 d-md-block bg-light sidebar d-none p-0 vh-91" style="height: 91vh;">
-            <%= render 'layouts/admin/sidebar' %>
-          </nav>
-          <!-- END SIDEBAR -->
-          <div class="col px-5 vh-91" style="height: 91vh;overflow-y: scroll;">
-            <%= render "layouts/admin/messages" %>
-            <!-- BEGIN MAIN CONTENT -->
-            <main class="pt-3">
-              <%= yield %>
-              <%= render "layouts/admin/footer" %>
-            </main>
-            <!-- END MAIN CONTENT -->
-          </div>
+      <div class="d-flex">
+        <!-- BEGIN SIDEBAR -->
+        <%= render 'layouts/admin/sidebar' %>
+        <!-- END SIDEBAR -->
+        <div class="px-5 vh-91 w-100" style="height: 91vh;overflow-y: scroll;">
+          <%= render "layouts/admin/messages" %>
+          <!-- BEGIN MAIN CONTENT -->
+          <main class="pt-3">
+            <%= yield %>
+            <%= render "layouts/admin/footer" %>
+          </main>
+          <!-- END MAIN CONTENT -->
         </div>
       </div>
     </div>

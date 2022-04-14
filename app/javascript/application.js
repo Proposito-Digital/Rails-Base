@@ -13,11 +13,6 @@ import './boostrap/init';
 // Import VueApp
 import vueApp from './vueApp';
 
-// Import Vue JS
-// import { createApp } from 'vue';
-// import Vue from "vue"
-// import Vuex from 'vuex';
-// import TurbolinksAdapter from 'vue-turbolinks';
 // import VueTheMask from 'vue-the-mask'
 // import Multiselect from 'vue-multiselect';
 // import money from 'v-money'
@@ -30,8 +25,6 @@ import vueApp from './vueApp';
 // import './boostrap/init';
 
 // Register Third Parties Libs
-// Vue.use(TurbolinksAdapter)
-// // Vue.use(Vuex)
 // Vue.use(MainPlugin);
 // Vue.use(VueTheMask)
 // Vue.component('vue-multiselect', Multiselect);

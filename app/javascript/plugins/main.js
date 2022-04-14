@@ -7,9 +7,5 @@ export default {
         var form_object = document.getElementById(id);
         form_object.submit()
       }
-      Vue.prototype.toogleSidebar = function(){
-        sidebar = document.getElementById('sidebar');
-        sidebar.classList.toggle('collapsed');
-      }
     }
 }

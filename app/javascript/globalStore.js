@@ -1,23 +1,16 @@
-const sidebardModule = {
+const sidebarModule = {
   namespaced: true,
   state: () => ({ /* data */
-    activeItem: 0,
-    collapsed: true
+    collapsed: false
   }),
   mutations: { /* methods */
-    INCREASE_ACTIVE_ITEM(state) {
-      return state.activeItem += 1;
-    },
-    TOOGLE_COLAPSE(state) {
+    TOOGLE_SIDEBAR(state) {
       return state.collapsed = !state.collapsed;
     }
   },
   actions: { /* computed */
-    increaseActiveItem(context) {
-      context.commit('INCREASE_ACTIVE_ITEM');
-    },
-    toogleCollapse(context) {
-      context.commit('TOOGLE_COLAPSE');
+    toogleSidebar(context) {
+      context.commit('TOOGLE_SIDEBAR');
     }
   }
 }
@@ -25,6 +18,6 @@ const sidebardModule = {
 
 export const globalStore = {
   modules: {
-    sidebardModule: sidebardModule
+    sidebarModule: sidebarModule
   }
 }

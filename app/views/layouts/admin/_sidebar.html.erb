@@ -1,43 +1,41 @@
-<vue-sidebar inline-template>
-  <nav id="sidebar" class="d-md-block bg-light sidebar d-none p-0 vh-91" :class="sidebarClass" style="height: 91vh;">
-    <div class="sidebar-toogle-container d-flex justify-content-end mt-4">
-      <button type="checkbox" id="toggle-sidebar-button" @click="toogleSidebar"> <i class="bi bi-list button-icon-outline-hidden" ></i> </button>
-    </div>
-    <div class="p-4 pt-5 mt-5">
-      <ul class="list-unstyled mb-5">
-        <% @menu.each do |menu_item| %>
-          <% if policy(menu_item[:policy]).menu? %>
-            <li class="nav-item mt-1">
-              <% if menu_item.key?(:items) %>
-                <a class="nav-link dropdown-toggle <%= menu_item[:active] ? 'active' : '' %>"  data-bs-toggle="collapse" data-bs-target="#<%= menu_item[:id_collapse] %>" aria-expanded="false" role="button">
-                  <i class="bi <%= menu_item[:icon] %>"></i>
-                  <span class="item-name"><%= menu_item[:name] %></span>
-                </a>
-                <div class="collapse <%= 'show' if menu_item[:active] %>" id="<%= menu_item[:id_collapse] %>" style="">
-                  <ul class="list-unstyled collapse show "  id="pageSubmenu">
-                    <% menu_item[:items].each do |submenu| %>
-                      <% if policy(submenu[:policy]).menu? %>
-                        <li>
-                          <a href="<%= url_for(submenu[:url]) %>" class="nav-link <%= submenu[:active]  ? 'active' : '' %> mt-1">
-                            <i class="bi <%= submenu[:icon] %>"></i>
-                            <span class="item-name"><%= submenu[:name] %></span>
-                          </a>
-                        </li>
-                      <% end %>
+<nav id="sidebar" class="d-md-block bg-light sidebar d-none p-0 vh-91" style="height: 91vh;">
+  <div class="sidebar-toogle-container d-flex justify-content-end mt-4">
+    <button type="checkbox" id="toggle-sidebar-button" @click="toogleSidebar"> <i class="bi bi-list button-icon-outline-hidden" ></i> </button>
+  </div>
+  <div class="p-4 pt-5 mt-5">
+    <ul class="list-unstyled mb-5">
+      <% @menu.each do |menu_item| %>
+        <% if policy(menu_item[:policy]).menu? %>
+          <li class="nav-item mt-1">
+            <% if menu_item.key?(:items) %>
+              <a class="nav-link dropdown-toggle <%= menu_item[:active] ? 'active' : '' %>"  data-bs-toggle="collapse" data-bs-target="#<%= menu_item[:id_collapse] %>" aria-expanded="false" role="button">
+                <i class="bi <%= menu_item[:icon] %>"></i>
+                <span class="item-name"><%= menu_item[:name] %></span>
+              </a>
+              <div class="collapse <%= 'show' if menu_item[:active] %>" id="<%= menu_item[:id_collapse] %>" style="">
+                <ul class="list-unstyled collapse show "  id="pageSubmenu">
+                  <% menu_item[:items].each do |submenu| %>
+                    <% if policy(submenu[:policy]).menu? %>
+                      <li>
+                        <a href="<%= url_for(submenu[:url]) %>" class="nav-link <%= submenu[:active]  ? 'active' : '' %> mt-1">
+                          <i class="bi <%= submenu[:icon] %>"></i>
+                          <span class="item-name"><%= submenu[:name] %></span>
+                        </a>
+                      </li>
                     <% end %>
-                  </ul>
-                </div>
-              <% else %>
-                <a class="nav-link <%= menu_item[:active] ? 'active' : '' %>" aria-current="page" href="<%= url_for(menu_item[:url])  if menu_item[:url].present? %>">
-                  <i class="bi <%= menu_item[:icon] %>"></i>
-                  <span data-feather="home"></span>
-                  <span class="item-name"><%= menu_item[:name] %></span>
-                </a>
-              <%end%>
-            </li>
-          <% end %>
+                  <% end %>
+                </ul>
+              </div>
+            <% else %>
+              <a class="nav-link <%= menu_item[:active] ? 'active' : '' %>" aria-current="page" href="<%= url_for(menu_item[:url])  if menu_item[:url].present? %>">
+                <i class="bi <%= menu_item[:icon] %>"></i>
+                <span data-feather="home"></span>
+                <span class="item-name"><%= menu_item[:name] %></span>
+              </a>
+            <%end%>
+          </li>
         <% end %>
-      </ul>
-    </div>
-  </nav>
-</vue-sidebar>
+      <% end %>
+    </ul>
+  </div>
+</nav>

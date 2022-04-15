@@ -12,9 +12,7 @@ pin "vue-turbolinks", to: "https://ga.jspm.io/npm:vue-turbolinks@2.2.2/index.js"
 pin "vuex", to: "https://cdn.jsdelivr.net/npm/vuex@4.0.0/dist/vuex.esm-browser.js"
 
 # Thidr Party Libs
-pin "vue-the-mask", to: "https://ga.jspm.io/npm:vue-the-mask@0.11.1/dist/vue-the-mask.js"
 pin "vue-multiselect", to: "https://cdn.jsdelivr.net/npm/vue-multiselect@3.0.0-alpha.1/dist/vue-multiselect.esm.min.js"
-pin "v-money", to: "https://ga.jspm.io/npm:v-money@0.8.1/dist/v-money.js"
 
 # Custom JS
 pin "application"

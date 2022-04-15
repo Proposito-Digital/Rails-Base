@@ -1,41 +1,41 @@
-<template>
-    <div class="my-multiselect-container">
-        <input type="hidden" :name="name" :id="id" v-model="selectedValue" :disabled="disabled || disableInput" >
-        <vue-multiselect
-            v-model="selectedOption"
-            :options="options"
-            :label="label"
-            :placeholder="placeholder"
-            :customLabel="customLabel"
-            :disabled="disabled"
-            :readonly="readonly"
-            :searchable="searchable"
-            :close-on-select="closeOnSelect"
-            :clear-on-select="clearOnSelect"
-            :allow-empty="allowEmpty"
-            :open-direction="'bottom'"
-            :preserve-search="preserveSearch"
-            :taggable="taggable"
-            :reset-after="resetAfter"
-            @search-change="asyncFind"
-            @select="onSelect"
-        >
-            <template slot="singleLabel" slot-scope="{ option }">
-                <slot name="singleLabel" :option=option>
-                </slot>
-            </template>
-            <template v-if="useSearchIcon" slot="caret">
-                <i class="caret-icon bi bi-search"></i>
-            </template>
-            <template slot="noResult">
-                <slot name="noResult"></slot>
-            </template>
-        </vue-multiselect>
-    </div>
-</template>
+const template = `
+<div class="my-multiselect-container">
+<input type="hidden" :name="name" :id="id" v-model="selectedValue" :disabled="disabled || disableInput" >
+<vue-multiselect
+    v-model="selectedOption"
+    :options="options"
+    :label="label"
+    :placeholder="placeholder"
+    :customLabel="customLabel"
+    :disabled="disabled"
+    :readonly="readonly"
+    :searchable="searchable"
+    :close-on-select="closeOnSelect"
+    :clear-on-select="clearOnSelect"
+    :allow-empty="allowEmpty"
+    :open-direction="'bottom'"
+    :preserve-search="preserveSearch"
+    :taggable="taggable"
+    :reset-after="resetAfter"
+    @search-change="asyncFind"
+    @select="onSelect"
+>
+    <template slot="singleLabel" slot-scope="{ option }">
+        <slot name="singleLabel" :option=option>
+        </slot>
+    </template>
+    <template v-if="useSearchIcon" slot="caret">
+        <i class="caret-icon bi bi-search"></i>
+    </template>
+    <template slot="noResult">
+        <slot name="noResult"></slot>
+    </template>
+</vue-multiselect>
+</div>
+`
 
-<script>
 export default {
+    template: template,
     props:{
         name: String,
         id: String,
@@ -149,4 +149,3 @@ export default {
         }
     },
 }
-</script>

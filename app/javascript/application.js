@@ -15,8 +15,8 @@ import vueApp from './vueApp';
 
 // import VueTheMask from 'vue-the-mask'
 // import Multiselect from 'vue-multiselect';
-// import money from 'v-money'
-// Import Plugins
+// import money from 'v-money'Plugins
+// Import 
 // import MainPlugin from './plugins/main';
 // Import Store
 // import { globalStore } from './globalStore';

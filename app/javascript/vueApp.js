@@ -2,7 +2,7 @@
 import { createApp } from 'vue';
 
 // Import Plugins
-// import myPlugin from './plugins/main';
+import globalMethodsPlugin from './plugins/globalMethods';
 
 // Import Third Party Libs
 import TurbolinksAdapter from 'vue-turbolinks';
@@ -30,7 +30,7 @@ const app = createApp({
 app.config.devtools = true;
 
 // Load Plugins
-// app.use(myPlugin);
+app.use(globalMethodsPlugin);
 
 // Load Third Party Libs
 app.use(TurbolinksAdapter);

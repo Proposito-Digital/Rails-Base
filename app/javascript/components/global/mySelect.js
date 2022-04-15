@@ -67,7 +67,7 @@ export default {
         },
         searchable: {
             type: Boolean,
-            default: false
+            default: true
         },
         closeOnSelect: {
             type: Boolean,

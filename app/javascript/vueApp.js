@@ -4,17 +4,17 @@ import { createApp } from 'vue';
 // Import Plugins
 // import myPlugin from './plugins/main';
 
-// Import Local components
-import globalComponentsList from "./components/index";
-
 // Import Third Party Libs
 import TurbolinksAdapter from 'vue-turbolinks';
-// import Vuex from 'vuex';
+import Vuex from 'vuex';
 import VueMultiselect from 'vue-multiselect';
 
+// Import Global components
+import globalComponentsList from "./components/index";
+
 // Import Store
-// import { globalStore } from './globalStore';
-// const store = new Vuex.Store(globalStore);
+import { globalStore } from './globalStore';
+const store = new Vuex.Store(globalStore);
 
 
 // Create App
@@ -25,7 +25,7 @@ const app = createApp({
       message: 'Hello Vue!'
     }
   },
-  // store: store
+  store: store
 });
 app.config.devtools = true;
 
@@ -34,7 +34,7 @@ app.config.devtools = true;
 
 // Load Third Party Libs
 app.use(TurbolinksAdapter);
-// app.use(Vuex);
+app.use(Vuex);
 
 // Load Third Party components
 app.component('vue-multiselect', VueMultiselect);

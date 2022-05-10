@@ -14,12 +14,14 @@ describe "integration teste for Admin::tenant", type: :feature do
     end
 
     it "create tenant" do
-        visit admin_tenants_path() 
+        visit admin_tenants_path()
+        debugger
         click_link 'Adicionar'
+        debugger
         within("#new_tenant") do
             fill_in 'tenant[name]', with: 'Tenant novo'
             fill_in 'tenant[slug]', with: 'novo tnt'
-        end 
+        end
         click_button 'Salvar'
         expect(page).to have_content 'foi criado com sucesso.'
     end

@@ -24,5 +24,21 @@ RSpec.describe UserRole, type: :model do
         expect{UserRole.create_admin user: user}.to change(user.roles.admin, :count).by 1
       end
     end
+    describe "new_regular" do
+      let!(:user) { create :user}
+      it "new role" do
+        role = UserRole.new_regular(user: user)
+        expect(role.user.id).to eq user.id
+        expect(role.role).to eq "regular"
+      end
+    end
+    describe "new_admin" do
+      let!(:user) { create :user}
+      it "new role" do
+        role = UserRole.new_admin(user: user)
+        expect(role.user.id).to eq user.id
+        expect(role.role).to eq "admin"
+      end
+    end
   end
 end

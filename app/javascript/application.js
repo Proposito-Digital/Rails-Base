@@ -11,11 +11,12 @@ import "bootstrap";
 import './boostrap/init';
 
 // Import VueApp
-import vueApp from './vueApp';
+import createVueApp from './vueApp';
 
 document.addEventListener('turbo:load', () => {
   const element = document.getElementById('appAdmin');
   if (element != null) {
+    const vueApp = createVueApp();
     vueApp.mount('#appAdmin');
   }
 })

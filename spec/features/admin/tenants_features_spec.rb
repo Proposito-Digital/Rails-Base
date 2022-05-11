@@ -14,12 +14,12 @@ describe "integration teste for Admin::tenant", type: :feature do
     end
 
     it "create tenant" do
-        visit admin_tenants_path() 
+        visit admin_tenants_path()
         click_link 'Adicionar'
         within("#new_tenant") do
             fill_in 'tenant[name]', with: 'Tenant novo'
             fill_in 'tenant[slug]', with: 'novo tnt'
-        end 
+        end
         click_button 'Salvar'
         expect(page).to have_content 'foi criado com sucesso.'
     end
@@ -41,7 +41,8 @@ describe "integration teste for Admin::tenant", type: :feature do
         within "#tr_Tenant_#{tenant.id}" do
             click_link 'Visualizar'
         end
-        expect(page).to have_xpath("//input[@value='#{tenant.name}']")
+        expect(find_field('tenant[name]', disabled: true).value).to eq tenant.name
+        expect(find_field('tenant[slug]', disabled: true).value).to eq tenant.slug
     end
     
     xit "delete tenant" do

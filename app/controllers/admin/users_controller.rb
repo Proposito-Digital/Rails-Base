@@ -11,10 +11,10 @@ class Admin::UsersController < BaseAdminController
       if @instance.id == current_user.id 
         bypass_sign_in @instance
       end
-      flash[:success] = "Senha alterada com sucesso"
+      flash[:success] = translate_flash('success')
       redirect_back fallback_location: admin_root_path
     else
-      flash[:danger] = "Erro ao editar senha"
+      flash[:danger] = translate_flash('danger')
       redirect_back fallback_location: admin_root_path
     end
   end

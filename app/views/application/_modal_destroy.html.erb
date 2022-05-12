@@ -3,15 +3,15 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Remover <%= model_name %></h5>
+        <h5 class="modal-title"><%=translate_view_destroy('title_modal', model_name: model_singular_translation.downcase)%></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
         <div class="modal-body">
-          <p><h4>Deseja realmente remover o(a) <%= model_name %>?</h4></p>
+          <p><h4><%=translate_view_destroy('subtitle_modal', model_name: model_singular_translation.downcase)%></h4></p>
         </div>
         <div class="d-flex justify-content-between modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <%= link_to 'Remover', url, data: { turbo_method: :delete }, class: "btn btn-danger" %>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%=translate_view_shared('cancel')%></button>
+          <%= link_to translate_view_shared('remove'), url, data: { turbo_method: :delete }, class: "btn btn-danger" %>
         </div>
     </div>
   </div>

@@ -364,6 +364,79 @@ pt-BR:
         other: "Mostrando todos os %{count} registros encontrados"
       multi_page: "Mostrando registros %{from} até %{to} de %{count} no total"
       multi_page_html: "Mostrando registros %{from} até %{to} de %{count} no total"
+  controllers:
+    generic:
+      create:
+        success: '%{controller_name} foi criado com sucesso.'
+      update:
+        success: '%{controller_name} foi atualizado com sucesso.'
+      destroy:
+        success: '%{controller_name} foi removido com sucesso.'
+        danger: "Erro ao deletar %{controller_name}"
+    admin:
+      tenants:
+        change_current_tenant:
+          success: "Tenant mudado com sucesso."
+          danger: "Erro ao mudar tenant"
+        disable_current_tenant:
+          success: "Tenant mudado com sucesso."
+          danger: "Erro ao mudar tenant"
+      users:
+        update_password:
+          success: "Senha alterada com sucesso"
+          danger: "Erro ao editar senha"
+  views:
+    application:
+      shared:
+        save: "Salvar"
+        show: "Visualizar"
+        back: "Voltar"
+        add: "Adicionar %{model_name}"
+        new_title: 'Novo %{model_name}'
+        edit: "Editar"
+        search_placeholder: 'Pesquisar %{model_name_plural}'
+        remove: "Remover"
+        remove_title: "Remover %{model_name}"
+        click_here: "Clique aqui"
+        cancel: Cancelar
+        invite: "Convidar"
+        copy: 'Copiar'
+        actions: 'Ações'
+        yes_display: 'Sim'
+        no_display: 'Não'
+        date_begin_placeholder: 'Data inicial'
+        date_end_placeholder: 'Data final'
+        add_file: 'Adicionar Arquivo'
+        pre_show: 'Pré-visualizar'
+        user_profile:
+          edit_profile: "Editar perfil"
+          change_password: "Alterar senha"
+          exit: "Sair"
+        modal_invite:
+          title: 'Convite para %{name}'
+          subtitle: 'Convidar %{name} para o Prozital?'
+        laboratory_placeholder: 'Selecione um laboratório'
+        state_placeholder: 'Selecione um estado'
+      actions:
+        index:
+          no_instances: Ainda não existem %{model_name} registrados
+          new_instance: Clique abaixo para criar um novo %{model_name}
+          new_button: "Criar %{model_name}"
+        destroy:
+          title_modal: "Remover %{model_name}"
+          subtitle_modal: Deseja realmente remover o(a) %{model_name}?
+    admin:
+      users:
+        shared:
+          change_password_modal:
+            title: 'Editar senha'
+            current_password: 'Senha atual'
+            new_password: 'Nova senha'
+            confirm_new_password: 'Redigite a nova senha'
+        actions:
+          new:
+            tenant_placeholder: 'Selecione o tenant do Usuário'
+            role_placeholder: 'Selecione o Perfil do Usuário'
   entities:
     single: 'Módulo'
     plural: 'Módulos'

@@ -10,7 +10,7 @@
 	<% if current_user.admin? %>
     <div class="mb-3">
       <%= form.label :role, class: 'form-label' %>
-      <%= form.select :roles, user_roles_options, { prompt: 'Selecione o Perfil do Usuário' }, class: 'form-select' %>
+      <%= form.select :roles, user_roles_options, { prompt: translate_view_new('role_placeholder') }, class: 'form-select' %>
 		</div>  
 	<% end %>
 </div>

@@ -21,7 +21,7 @@ private
   	api_key = ApiKey.where(access_token: api_key).first if api_key
 		
 	  unless api_key
-	    errors = ['Um cabeçalho HTTP necessário não foi especificado.']
+	    errors = ['A HTTP header has not specified']
     	render(json: {status: 400, errors: errors})
 	  end
   end
@@ -31,7 +31,7 @@ private
 		user = User.where(access_token: access_token).first if access_token
 
 		unless user && user.access_token_expired?
-	    	errors = ['Token de acesso expirado.']
+	    	errors = ['Access token expired']
     		render(json: {status: 400, errors: errors})
 	  	end
 	end

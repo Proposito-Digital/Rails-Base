@@ -18,11 +18,11 @@
   <main class="px-3">
     <%= image_tag 'logo-slogan-white.png', class: "img-fluid", alt: "Rails Base logo"%>
     <div class="mt-3">
-      <h1>Welcome to Rails Base version <%= app_version %>.</h1>
+      <h1><%=translate_view_home("title", app_version: app_version)%></h1>
     </div>
-    <p class="lead">Go to administration.</p>
+    <p class="lead"><%=translate_view_home("go_to_administration")%></p>
     <p class="lead">
-      <a href="/admin" class="btn btn-lg  fw-bold border-white bg-white">Go Further</a>
+      <a href="/admin" class="btn btn-lg  fw-bold border-white bg-white"><%=translate_view_home("go_further")%></a>
     </p>
   </main>
 

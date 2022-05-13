@@ -24,6 +24,10 @@ module Translations::TranslationsView
     translation
   end
 
+  def translate_view_application_shared(path, params = {})
+    base_translate_view_application_path("shared.#{path}.", params)
+  end
+
   def translate_view_actions(path, params = {})
     translate_view("actions.#{path}", params)
   end
@@ -64,4 +68,5 @@ module Translations::TranslationsView
   alias_method :t_view_edit, :translate_view_edit
   alias_method :t_view_show, :translate_view_show
   alias_method :t_view_destroy, :translate_view_destroy
+  alias_method :t_view_application_shared, :translate_view_application_shared
 end

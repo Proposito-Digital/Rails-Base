@@ -2,26 +2,27 @@ require 'active_support/concern'
 
 module SidebarConcerns
 	extend ActiveSupport::Concern
+  include Translations::TranslationsView
 
  	included do
     def set_menu
       @menu = [
       {
-        name: 'Início',
+        name: translate_view_application_shared('sidebar_menu.home'),
         icon: 'bi bi-house-door',
         policy: :dashboard,
         url: { controller: 'dashboard', action: 'index' },
         active: controller_path == 'admin/dashboard'
       },
       {
-        name: 'Usuários',
+        name: t('users.plural'),
         icon: 'bi bi-person',
         policy: :user,
         url: { controller: 'users', action: 'index' },
         active: controller_path == 'admin/users'
       },
       {
-        name: 'Tenants',
+        name: t('tenants.plural'),
         icon: 'bi bi-people',
         policy: :tenant,
         url: { controller: 'tenants', action: 'index' },

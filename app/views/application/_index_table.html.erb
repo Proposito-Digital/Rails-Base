@@ -12,7 +12,7 @@
   <div class="row my-3">
     <form id="form_search" action=<%= instances_index_path %> method="get">
       <div class="input-group flex-nowrap">
-        <input type="search" id="input-search" class="form-control" name="term" value="<%= params[:term] %>" placeholder= <%="'Pesquisar #{model_plural_translation }'".html_safe %> aria-label="Search" aria-describedby="Search field">
+        <input type="search" id="input-search" class="form-control" name="term" value="<%= params[:term] %>" placeholder="<%=translate_view_shared('search_placeholder', model_name: model_plural_translation.downcase)%>" aria-label="Search" aria-describedby="Search field">
         <button type="submit" class="input-group-text bi bi-search" ></button>
       </div>
     </form>
@@ -33,7 +33,11 @@
             <tr id='tr_<%= "#{instance.class.name}_#{instance.id}"%>'>
               <% instance.attributes.excluding('id', 'deleted_at').take(5).each do |name, value| %>
                 <td class=" t-center">
-                  <%= value %>
+									<% if(value.instance_of? ActiveSupport::TimeWithZone) %>
+										<%= translate_datetime_format_default(value, "dt_at") %>
+									<% else %>
+										<%= value %>
+									<% end %>
                 </td>
               <% end %>
               <td wrap-btn-table>

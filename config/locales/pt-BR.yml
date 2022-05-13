@@ -48,8 +48,9 @@ pt-BR:
     - Sábado
     formats:
       default: "%d/%m/%Y"
-      long: "%d de %B de %Y"
-      short: "%d de %B"
+      long: "%d de %{month_name} de %Y"
+      longw: "%{week_name}, %d de %{month_name} de %Y"
+      short: "%d de %{month_name}"
     month_names:
     - 
     - Janeiro
@@ -212,10 +213,10 @@ pt-BR:
       words_connector: ", "
   time:
     am: ''
+    hour_format: "%H:%M"
     formats:
-      default: "%d/%m/%Y %H:%M"
-      long: "%d de %B de %Y, %H:%M"
-      short: "%d de %B, %H:%M"
+      dt_default: "%{date} %{time}"
+      dt_at: "%{date} às %{time}"
     pm: ''
   activerecord:
     errors:
@@ -228,6 +229,8 @@ pt-BR:
           attributes:
             tenant: 
               required: "não pode ficar em branco"
+            email:
+              not_found: "E-mail não cadastrado"
         meet:
           attributes:
             group: 
@@ -408,14 +411,21 @@ pt-BR:
         date_end_placeholder: 'Data final'
         add_file: 'Adicionar Arquivo'
         pre_show: 'Pré-visualizar'
+        enter: 'Entrar'
+        submit: 'Enviar'
+        email_placeholder: "Digite o e-mail"
+        password_placeholder: "Digite a senha"
+        email: "E-mail"
+        password: "Senha"
         user_profile:
           edit_profile: "Editar perfil"
           change_password: "Alterar senha"
           exit: "Sair"
+        sidebar_menu:
+          home: 'Início'
         modal_invite:
           title: 'Convite para %{name}'
           subtitle: 'Convidar %{name} para o Prozital?'
-        laboratory_placeholder: 'Selecione um laboratório'
         state_placeholder: 'Selecione um estado'
       actions:
         index:
@@ -437,6 +447,38 @@ pt-BR:
           new:
             tenant_placeholder: 'Selecione o tenant do Usuário'
             role_placeholder: 'Selecione o Perfil do Usuário'
+    devise:
+      sessions:
+        actions:
+          new:
+            title: Entrar no Rails Base
+            subtitle: "Digite seu email & senha para entrar"
+            forgot_password: "Esqueceu a senha?"
+            login: "Entrar"
+      passwords:
+        actions:
+          new:
+            title: "Recuperar senha"
+            subtitle: "Digite seu e-mail para receber instruções sobre como recuperar a senha"
+    custom_devise:
+      registrations:
+        actions:
+          new:
+            title: "Cadastre-se no Rails Base"
+            has_registration: "Já possui cadastro? Entre aqui!"
+    pages:
+      actions:
+        home:
+          title: "Bem-vindo ao Rails Base versão %{app_version}."
+          go_to_administration: "Administração"
+          go_further: "Ir para o admin"
+  emails:
+    reset_password_instructions:
+      title: "Ola %{email}!"
+      change_password_solicited: "Uma alteração de senha foi requisitada . Você pode fazer isso pelo link abaixo."
+      change_password_link: "Alterar a senha"
+      ignore: "Se você não fez esse pedido, por favor ignore esse email."
+      password_not_change: "Sua senha não mudará enquanto voĉe não acessar o link a cima e criar uma nova senha."
   entities:
     single: 'Módulo'
     plural: 'Módulos'

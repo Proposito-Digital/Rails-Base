@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 module GenericHelper
-	include Translations::TranslationsView
+	include Translations::TranslationsHelper
 end

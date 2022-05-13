@@ -1,23 +1,506 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
+  numbers:
+    one: '1 min'
+    two: '2 min'
+    three: '3 min'
+    four: '4 min'
+    five: '5 min'
+    eight: '8 min'
+    thirteen: '13 min'
+    twentyone: '21 min'
+  pundit:
+    default: 'You cannot make this action'
+    entity_policy:
+      update?: 'You cannot edit this post!'
+      create?: 'You cannot create posts!'
+      show?: 'Você não pode ver entidades!'
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    - Sunday
+    formats:
+      default: "%Y-%m-%d"
+      long: "%d %B %Y"
+      longw: "%{week_name}, %d %{month_name} of %Y"
+      short: "%d %B"
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about one hour
+        other: about %{count} hours
+      about_x_months:
+        one: about one month
+        other: approximately %{count} months
+      about_x_years:
+        one: about one year
+        other: about %{count} years
+      almost_x_years:
+        one: almost one ano
+        other: almost %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_minutes:
+        one: less than one minute
+        other: less than %{count} minute
+      less_than_x_seconds:
+        one: less than one seconds
+        other: less than %{count} seconds
+      over_x_years:
+        one: over one year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Second
+      year: Year
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: must be accepted
+      blank: cannot be blank
+      present: must be blank
+      confirmation: is not equal to %{attribute}
+      empty: cannot be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is not available
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is not valid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: is not an integer number
+      odd: must be odd
+      record_invalid: 'Validation failed:%{errors}'
+      taken: is already taken
+      too_long: 'is too long (maximum: %{count} characters)'
+      too_short: 'is too short (minimum: %{count} characters)'
+      wrong_length: has wrong lengthh (%{count} characters)
+      other_than: must be other than %{count}
+    template:
+      body: 'Please, verify the following field(s):'
+      header:
+        one: 'Unable to save %{model}: 1 erro'
+        other: 'Unable to save %{model}: %{count} erros.'
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u %n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: US$
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            one: billion
+            other: billion
+          million:
+            one: million
+            other: millions
+          quadrillion:
+            one: quadrillion
+            other: quadrillion
+          thousand: mil
+          trillion:
+            one: trillion
+            other: trillions
+          unit: ''
+      format:
+        delimiter: "."
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: "."
+        format: "%n%"
+    precision:
+      format:
+        delimiter: "."
+  support:
+    array:
+      last_word_connector: " and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: ''
+    hour_format: "%I:%M %p"
+    formats:
+      dt_default: "%{date} %{time}"
+      dt_at: "%{date} at %{time}"
+    pm: ''
+  activerecord:
+    errors:
+      models:
+        group:
+          attributes:
+            tenant: 
+              required: "cannot be blank"
+        user:
+          attributes:
+            tenant: 
+              required: "cannot be blank"
+            email:
+              not_found: "E-mail not registered"
+        meet:
+          attributes:
+            group: 
+              required: "cannot be blank"
+            tenant: 
+              required: "cannot be blank"
+            host: 
+              required: "cannot be blank"
+        topic:
+          attributes:
+            tenant: 
+              required: "cannot be blank"
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Unable to delete record because there is dependent %{record}
+          has_many: Unable to delete record because there are dependent %{record}
+    models:
+      user: User
+      entity: 'Entity'
+      permission: 'Permission'
+      role: 'role'
+      entity_category: 'Entity Category'
+    attributes:
+      user:
+        name: "Name"
+        email: "E-mail"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        role: "Role"
+        last_sign_in_at: "Last sign in at"
+      role:
+        name: "Name"
+      permission: 
+        entity_id: "Entity"
+        action_name: "Action Name"
+        action: "Action"
+      entity_category:
+        name: "Name"
+        icon: "Icon"
+      entity:
+        name: "Name"
+        slug: "Slug"
+        controller: "Controller"
+        is_dev: "Development Module"
+        visible: "Visible in menu"
+      group:
+        name: "Name"
+        image: "Image"
+      tenant:
+        name: "Name"
+        slug: "Slug"
+        created_at: "Created at"
+        updated_at: "Updated at"
+
+   
+      
+  en:
+    activerecord:
+      attributes:
+        meet:
+          statuses:
+            created: "Created"
+            finished: "Finished"
+
+
+
+
+  devise:
+    confirmations:
+      confirmed: 'You account has been confirmed successfully. You are logged'
+      send_instructions: 'In a few minutes, you will receive an email message with instructions to account verification.'
+      send_paranoid_instructions: 'If your email address is signed up, you will receive a message with instructions to your account verification.'
+    failure:
+      already_authenticated: 'You are already authenticated'
+      inactive: 'Your account has not yet been activated.'
+      invalid: 'E-mail or password are invalid.'
+      invalid_token: 'The authentication token is invalid'
+      locked: 'Your account is locked'
+      not_found_in_database: 'E-mail or password are invalid.'
+      timeout: 'Your session is over. Please, log in again to continue.'
+      unauthenticated: 'To continue, login or sign up'
+      unconfirmed: 'Before continue, verify your account'
+    mailer:
+      confirmation_instructions:
+        subject: 'Confirmation instructions'
+      reset_password_instructions:
+        subject: 'Reset password instructions'
+      unlock_instructions:
+        subject: 'Unlock instructions'
+    omniauth_callbacks:
+      failure: 'Unable to authenticate with %{kind} because %{reason}".'
+      success: 'Authenticated successfully with %{kind} account.'
+    passwords:
+      no_token: "You can access this page through a password reset email message. If you are acessing by e-mail, verify if the URL is completed correctly"
+      send_instructions: 'In a few minutes, you will receive a email message with instructions to change your password'
+      send_paranoid_instructions: 'If you email address is registered, you will receive a password reset link by e-mail'
+      updated: 'Your password has been changed successfully. You are logged'
+      updated_not_active: 'Your password has been changed successfully.'
+    registrations:
+      destroyed: 'Goodbye! Your account has been cancelled successfully. We hope see you again soon!'
+      signed_up: 'Logged in sucessfully. If you have not been authorized, the confirmation will be sent by email'
+      signed_up_but_inactive: 'You has been registered, however, unable to login because your account has not been activated'
+      signed_up_but_locked: 'You has been registered successfully. however, unable to login because your account is locked.'
+      signed_up_but_unconfirmed: 'A message with confirmation link has been sent to you email address. Please, access confirmation link to confirm your account.'
+      update_needs_confirmation: 'You updated your account successfully, but your new email address need to be confirmed. Please, go to your new e-mail account and click on confirmation link.'
+      updated: 'Your account has been updated successfully'
+    sessions:
+      user:
+        signed_in: 'Your signed in successfully'
+        signed_out: 'Your signed out successfully'
+    unlocks:
+      send_instructions: 'In a few minutes, you will receive an email message with instructions to unlock your account'
+      send_paranoid_instructions: 'If your account exists, you will receive an email message with instructions to unlock your account in a few minutes'
+      unlocked: 'Your account has been unlocked successfully. Log in to continue'
+    errors:
+      messages:
+        already_confirmed: "Has already been confirmed"
+        confirmation_period_expired: "Need to be confirmed until %{period}, please, request a new"
+        expired: "It is expired, please, request a new"
+        not_found: "It is not found"
+        not_locked: "It is not locked"
+        not_saved:
+          one: "Unable to save %{resource}: one error"
+          other: "Unable to save %{resource}: %{count} error"
+  will_paginate:
+    previous_label: "Previous"
+    next_label: "Next"
+    page_gap: "&hellip;"
+    page_entries_info:
+      single_page_html:
+        zero:  "No records found"
+        one:   "Only one record found"
+        other: "Showing all the %{count} records found"
+      multi_page: "Showing records: %{from} to %{to} from %{count}"
+      multi_page_html: "Showing records: %{from} to %{to} from %{count}"
+  controllers:
+    generic:
+      create:
+        success: '%{controller_name} has been created successfully.'
+      update:
+        success: '%{controller_name} has been updated successfully.'
+      destroy:
+        success: '%{controller_name} has been removed successfully.'
+        danger: "Error when deleting %{controller_name}"
+    admin:
+      tenants:
+        change_current_tenant:
+          success: "Tenant has changed successfully."
+          danger: "Error when changing tenant"
+        disable_current_tenant:
+          success: "Tenant has changed successfully."
+          danger: Error when changing tenant"
+      users:
+        update_password:
+          success: "Password updated successfully"
+          danger: "Error when editing password"
+  views:
+    application:
+      shared:
+        save: "Save"
+        show: "Show"
+        back: "Back"
+        add: "Add %{model_name}"
+        new_title: 'New %{model_name}'
+        edit: "Edit"
+        search_placeholder: 'Search %{model_name}'
+        remove: "Remove"
+        remove_title: "Remove %{model_name}"
+        click_here: "Click here"
+        cancel: Cancel
+        invite: "Invite"
+        copy: 'Copy'
+        actions: 'Actions'
+        yes_display: 'Yes'
+        no_display: 'No'
+        date_begin_placeholder: 'Date begin'
+        date_end_placeholder: 'Date end'
+        add_file: 'Add File'
+        submit: 'Submit'
+        email_placeholder: "Fill your e-mail here"
+        password_placeholder: "Fill your password here"
+        email: "Email"
+        password: "Password"
+        user_profile:
+          edit_profile: "Edit profile"
+          change_password: "Change password"
+          exit: "Exit"
+        sidebar_menu:
+          home: 'Home'
+        modal_invite:
+          title: 'Invite to %{name}'
+          subtitle: 'Do you invite %{name} to Prozital?'
+        state_placeholder: 'Select state'
+      actions:
+        index:
+          no_instances: Don't exist yet %{model_name} registered
+          new_instance: Click below to create new %{model_name}
+          new_button: "Create %{model_name}"
+        destroy:
+          title_modal: "Remove %{model_name}"
+          subtitle_modal: Do you really want to remove %{model_name}?
+    admin:
+      users:
+        shared:
+          change_password_modal:
+            title: 'Edit password'
+            current_password: 'Current password'
+            new_password: 'New password'
+            confirm_new_password: 'Confirm new password'
+        actions:
+          new:
+            tenant_placeholder: 'Select user tenant'
+            role_placeholder: 'Select user role'
+    devise:
+      sessions:
+        actions:
+          new:
+            title: Rails Base Login
+            subtitle: "Fill your email and password to login"
+            forgot_password: "Forgot password?"
+            login: "Login"
+      passwords:
+        actions:
+          new:
+            title: "Password recovery"
+            subtitle: "Fill your e-mail to receive instructions about password recovery"
+    custom_devise:
+      registrations:
+        actions:
+          new:
+            title: "Rails Base sign up"
+            has_registration: "Has registration? Click here!"
+    pages:
+      actions:
+        home:
+          title: "Welcome to Rails Base version %{app_version}."
+          go_to_administration: "Go to administration."
+          go_further: "Go Further"
+  emails:
+    reset_password_instructions:
+      title: "Hello %{email}!"
+      change_password_solicited: "A password reset has been solicited . You can do through below link."
+      change_password_link: "Reset password"
+      ignore: "if you haven't made that solicitation, please ignore this message"
+      password_not_change: "Your password will not be changed when you don't access below link and create a new password"
+  entities:
+    single: 'Module'
+    plural: 'Modules'
+  entity_categories:
+    single: 'Module category'
+    plural: 'Module categories'
+  permissions:
+    single: 'Permission'
+    plural: 'Permissions'
+  roles:
+    single: 'Role'
+    plural: 'Roles'
+  users:
+    single: 'User'
+    plural: 'Users'
+  groups:
+    single: 'Group'
+    plural: 'Groups'
+  meets:
+    single: 'Meet'
+    plural: 'Meets'
+  tenants:
+    single: 'Tenant'
+    plural: 'Tenants'
+  users_admin:
+    single: 'Admin'
+    plural: 'Admins'

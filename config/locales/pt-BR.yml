@@ -1,5 +1,7 @@
 ---
 pt-BR:
+  language_name: "Português"
+  flag_icon: flag-icon-br
   numbers:
     one: '1 min'
     two: '2 min'
@@ -474,11 +476,20 @@ pt-BR:
           go_further: "Ir para o admin"
   emails:
     reset_password_instructions:
-      title: "Ola %{email}!"
+      title: "Olá %{email}!"
       change_password_solicited: "Uma alteração de senha foi requisitada . Você pode fazer isso pelo link abaixo."
       change_password_link: "Alterar a senha"
       ignore: "Se você não fez esse pedido, por favor ignore esse email."
       password_not_change: "Sua senha não mudará enquanto voĉe não acessar o link a cima e criar uma nova senha."
+    unlock_instructions:
+      title: "Olá %{email}"
+      unsucessfully_sign_ups: "Sua conta foi bloqueada devido ao excessivo número de tentativas de login"
+      link_below: "Clique no link abaixo para desbloquear sua conta:"
+      link: "Desbloquear minha conta"
+    confirmation_instructions:
+      title: "Bem-vindo %{email}"
+      can_confirm: "Você pode confirmar sua conta através do link abaixo"
+      link: "Confirmar minha conta"
   entities:
     single: 'Módulo'
     plural: 'Módulos'

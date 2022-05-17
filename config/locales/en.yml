@@ -1,5 +1,7 @@
 ---
 en:
+  language_name: "English"
+  flag_icon: flag-icon-us
   numbers:
     one: '1 min'
     two: '2 min'
@@ -418,7 +420,7 @@ en:
         user_profile:
           edit_profile: "Edit profile"
           change_password: "Change password"
-          exit: "Exit"
+          exit: "Logout"
         sidebar_menu:
           home: 'Home'
         modal_invite:
@@ -477,6 +479,15 @@ en:
       change_password_link: "Reset password"
       ignore: "if you haven't made that solicitation, please ignore this message"
       password_not_change: "Your password will not be changed when you don't access below link and create a new password"
+    unlock_instructions:
+      title: "Hello %{email}"
+      unsucessfully_sign_ups: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+      link_below: "Click the link below to unlock your account:"
+      link: "Unlock my account"
+    confirmation_instructions:
+      title: "Welcome %{email}"
+      can_confirm: "You can confirm your account email through the link below"
+      link: "Confirm my account"
   entities:
     single: 'Module'
     plural: 'Modules'

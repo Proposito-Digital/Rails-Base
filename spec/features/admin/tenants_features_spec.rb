@@ -75,13 +75,13 @@ describe "integration teste for Admin::tenant", type: :feature do
         visit admin_tenants_path() 
 
         click_link 'Nome'
-        expect(page).to have_current_path(admin_tenants_path(sort_direction: 'asc', sort_column: 'tenants.name'))
+        expect(page).to have_current_path(admin_tenants_path(sort_direction: 'asc', sort_column: 'tenants.name', locale: "pt-BR"))
         tenants = Tenant.order(name: :asc).all()
         expect(page).to have_css('table > tbody > tr:nth-child(1) > td:nth-child(1)', text: tenants[0].name)
         
         click_link 'Nome'
         tenants = Tenant.order(name: :desc).all()
-        expect(page).to have_current_path(admin_tenants_path(sort_direction: 'desc', sort_column: 'tenants.name'))
+        expect(page).to have_current_path(admin_tenants_path(sort_direction: 'desc', sort_column: 'tenants.name', locale: "pt-BR"))
         expect(page).to have_css('table > tbody > tr:nth-child(1) > td:nth-child(1)', text: tenants[0].name)
     end
 

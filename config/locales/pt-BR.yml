@@ -390,6 +390,9 @@ pt-BR:
         update_password:
           success: "Senha alterada com sucesso"
           danger: "Erro ao editar senha"
+        update_all_passwords:
+          success: "Senha alterada com sucesso"
+          danger: "Erro ao editar senha"
   views:
     application:
       shared:

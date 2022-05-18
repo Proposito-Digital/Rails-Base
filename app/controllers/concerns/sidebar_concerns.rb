@@ -2,7 +2,7 @@ require 'active_support/concern'
 
 module SidebarConcerns
 	extend ActiveSupport::Concern
-  include Translations::TranslationsView
+  include Translations::TranslationsViewHelper
 
  	included do
     def set_menu

@@ -1,6 +1,6 @@
 module Translations::TranslationsHelper
-  include Translations::TranslationsView
-	include Translations::Datetime
+  include Translations::TranslationsViewHelper
+	include Translations::DatetimeHelper
   include Translations::TranslationsSelectHelper
 
   # controller: PagesController, action: home

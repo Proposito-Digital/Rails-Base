@@ -1,4 +1,4 @@
-module Translations::TranslationsView
+module Translations::TranslationsViewHelper
   
   def base_translate_view(path, params = {})
     t("views.#{path}.", **params)

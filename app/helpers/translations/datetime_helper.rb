@@ -1,4 +1,4 @@
-module Translations::Datetime
+module Translations::DatetimeHelper
     def translate_date(path, params = {})
         t("date.#{path}.", **params)
     end

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# :nocov:
 module Constants
 	DAYS = {  	
     monday: 'Segunda-feira',
@@ -28,3 +29,4 @@ module Constants
   }
 
 end
+# :nocov:

@@ -47,7 +47,9 @@ describe "integration teste for Admin::user", :type => :feature do
     within "#tr_User_#{user.id}" do 
       click_link 'Visualizar'
     end
-    expect(page).to have_xpath("//input[@value='#{user.name}']")
+    expect(find_field('user[name]', disabled: true).value).to eq user.name
+    expect(find_field('user[email]', disabled: true).value).to eq user.email
+    expect(find_field('user[roles]', disabled: true).value).to eq "admin"
   end
 
   xit "delete user" do

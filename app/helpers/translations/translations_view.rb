@@ -5,11 +5,7 @@ module Translations::TranslationsView
   end
 
   def base_translate_view_controller_path(path, params = {})
-    base_translate_view("#{translation_controller_path}.#{path}", params)
-  end
-
-  def base_translate_view_controller_contextable_path(path, params = {})
-    base_translate_view("#{translation_contextable_controller_path}.#{path}", params)
+    base_translate_view("#{translation_view_path}.#{path}", params)
   end
 
   def base_translate_view_application_path(path, params = {})
@@ -56,7 +52,7 @@ module Translations::TranslationsView
     translate_view_actions("destroy.#{path}", params)
   end
 
-  def translation_controller_path
+  def translation_view_path
     splited_name = self.controller.class.name.underscore.split("/")
     splited_name[splited_name.length-1] = splited_name[splited_name.length-1].gsub("_controller", "")
     splited_name.join(".")

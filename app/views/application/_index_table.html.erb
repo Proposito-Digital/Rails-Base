@@ -4,7 +4,7 @@
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4"> <%=translate_view_index('new_instance', { model_name: model_singular_translation.downcase})%></p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <a class='btn btn-primary btn-lg px-4 gap-3' href="<%= instance_new_path %>"><i class="bi bi-plus"></i><%=translate_view_index('new_button', model_singular: model_singular_translation.downcase )%></a> 
+        <a class='btn btn-primary btn-lg px-4 gap-3' href="<%= instance_new_path %>"><i class="bi bi-plus"></i><%=translate_view_index('new_button', model_name: model_singular_translation.downcase )%></a> 
       </div>
     </div>
   </div>

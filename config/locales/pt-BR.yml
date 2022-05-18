@@ -399,7 +399,7 @@ pt-BR:
         add: "Adicionar %{model_name}"
         new_title: 'Novo %{model_name}'
         edit: "Editar"
-        search_placeholder: 'Pesquisar %{model_name_plural}'
+        search_placeholder: 'Pesquisar %{model_name}'
         remove: "Remover"
         remove_title: "Remover %{model_name}"
         click_here: "Clique aqui"

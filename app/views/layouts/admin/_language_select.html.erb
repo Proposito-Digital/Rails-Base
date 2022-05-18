@@ -1,0 +1,14 @@
+<ul class="navbar-nav" id="language_select">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false"><%= get_language_name locale %></a>
+    <%= render 'layouts/admin/shared/avatar' %>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+      <% I18n.available_locales.each do |available_locale|%>
+        <%= link_to url_for(locale: available_locale), {class: (locale==available_locale) ? "dropdown-item header-select-selected" : "dropdown-item"} do%>
+          <span class="flag-icon <%=get_locale_flag_icon available_locale%> d-block language-select-flag"></span>  
+          <span class="d-block language-select-name"><%=get_language_name available_locale%></span>
+        <% end %>
+      <% end %>
+    </ul>
+  </li>
+</ul>

@@ -5,9 +5,9 @@ class Admin::TenantsController < BaseAdminController
     session_service = SessionService.new(request)
     session_service.set_admin_tenant_id(params[:id])
     if set_tenant
-      redirect_to admin_tenants_path, flash:{success: t("#{controller_name}.single") + ' mudado com sucesso.' }  
+      redirect_to admin_tenants_path, flash:{success: translate_flash('success') }  
     else
-      redirect_to admin_tenants_path, flash:{danger: "Erro ao mudar " + t("#{controller_name}.single")}  
+      redirect_to admin_tenants_path, flash:{danger: translate_flash('danger')}  
     end
   end
  
@@ -16,9 +16,9 @@ class Admin::TenantsController < BaseAdminController
     session_service = SessionService.new(request)
     session_service.clear_admin_tenant_id
     if session_service.admin_tenant_id == nil
-      redirect_to admin_tenants_path, flash:{success: t("#{controller_name}.single") + ' mudado com sucesso.' }  
+      redirect_to admin_tenants_path, flash:{success: translate_flash('success') }  
     else
-      redirect_to admin_tenants_path, flash:{danger: "Erro ao mudar " + t("#{controller_name}.single")}  
+      redirect_to admin_tenants_path, flash:{danger: translate_flash('danger')}  
     end
   end
 
@@ -29,9 +29,9 @@ class Admin::TenantsController < BaseAdminController
     begin
       @instance.destroy
     rescue ActiveRecord::InvalidForeignKey
-      redirect_to admin_tenants_path, flash:{danger: "Erro ao deletar " + t("#{controller_name}.single")}
+      redirect_to admin_tenants_path, flash:{danger: translate_flash('danger')}
     else
-      redirect_to self.send(redirect_to_index), :flash =>{:success => t("#{controller_name}.single") + ' foi removido com sucesso.' }
+      redirect_to self.send(redirect_to_index), :flash =>{:success => translate_flash('danger') }
     end
   end
   

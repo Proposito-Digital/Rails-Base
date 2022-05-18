@@ -21,7 +21,7 @@
           <a class="nav-link" href="#">Link</a>
         </li> -->
         <span class="navbar-text">
-          Tenant:
+          <%=t('tenants.single')%>:
         </span>
         <% if current_user.admin? %>
           <li class="nav-item dropdown">
@@ -41,7 +41,8 @@
           </li>
         <% end %>
       </ul>
-        <%= render 'layouts/admin/user_profile' %>
+      <%=render partial: 'layouts/admin/language_select' %>
+      <%= render 'layouts/admin/user_profile' %>
     </div>
   </div>
 </header>

@@ -34,7 +34,7 @@ RSpec.describe Api::V1::SessionsController, type: :controller do
 
        it "try to get access token without a API-KEY" do
         post "login", params: {}, :format => :json
-        expect(response.body).to include "Um cabeçalho HTTP necessário não foi especificado."
+        expect(response.body).to include "A HTTP header has not specified"
         expect(response.body).to include "errors"
         expect(response.body).to include "400"
         expect(response).to have_http_status(200)

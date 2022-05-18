@@ -1,23 +1,23 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <h4>Entrar no Rails Base </h4>
-  <p>Digite seu email & senha para entrar</p>
+  <h4><%=translate_view_new('title')%> </h4>
+  <p><%=translate_view_new('subtitle')%></p>
   <div class="form-group">
-    <%= label_tag 'Email', nil, class: 'col-form-label' %>
-    <%= text_field_tag "user[email]", nil, id: "login-email", class: "form-control", autofocus: true, required: true, placeholder: 'Digite o email' %>
+    <%= label_tag attribute_translation("user", "email"), nil, class: 'col-form-label' %>
+    <%= text_field_tag "user[email]", nil, id: "login-email", class: "form-control", autofocus: true, required: true, placeholder: translate_view_shared('email_placeholder') %>
   </div>
   <div class="form-group">
-    <%= label_tag 'Senha', nil, class: 'col-form-label' %>
+    <%= label_tag attribute_translation("user", "password"), nil, class: 'col-form-label' %>
     <div class="form-input position-relative">
-      <%= password_field_tag "user[password]", nil, id: "login-password", class: "form-control", autofocus: true, autocomplete: "off", required: true, placeholder: 'Digite a senha' %>
+      <%= password_field_tag "user[password]", nil, id: "login-password", class: "form-control", autofocus: true, autocomplete: "off", required: true, placeholder: translate_view_shared('password_placeholder') %>
     </div>
   </div>
   <div class="form-group mb-0">
     <div class="checkbox p-0">
       <input id="checkbox1" type="checkbox">
       <%# <label class="text-muted" for="checkbox1">Remember password</label> %>
-    </div><a class="link" href="<%= new_user_password_path %>" >Esqueceu a senha?</a>
+    </div><a class="link" href="<%= new_user_password_path %>" ><%=translate_view_new('forgot_password')%></a>
     <div class="text-end mt-3">
-      <button class="btn btn-primary btn-block w-100" type="submit">Entrar</button>
+      <button class="btn btn-primary btn-block w-100" type="submit"><%=translate_view_new('login')%></button>
     </div>
   </div>
 <% end %>

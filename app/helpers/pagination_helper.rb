@@ -2,9 +2,13 @@
 module PaginationHelper
 
 	def pagination_path page
-		path ="#{instances_index_path}" 
-		if page 
-			path += "?page=#{page}"
+		path ="#{instances_index_path}"
+		if page
+			if path.match("\\?locale=").present?
+				path += "&page=#{page}"
+			else
+				path += "?page=#{page}"
+			end
 		end
 		if params.has_key?(:term)
 			path += "&term=#{params[:term]}"

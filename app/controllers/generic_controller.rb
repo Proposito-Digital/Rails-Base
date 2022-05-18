@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 class GenericController < ApplicationController
+  include Translations::TranslationFlashMessages
   before_action :set_model_class
   
   # GET /users
@@ -35,7 +36,7 @@ class GenericController < ApplicationController
     @instance = @model.new(instance_params)
     authorize @instance
     if @instance.save
-      redirect_to self.send(redirect_to_index), flash: { success: t("#{controller_name}.single") + ' foi criado com sucesso.' }
+      redirect_to self.send(redirect_to_index), flash: { success: translate_flash('success') }
     else
       render :new
     end
@@ -47,7 +48,7 @@ class GenericController < ApplicationController
     set_instance
     authorize @instance
     if @instance.update(instance_params)
-      redirect_to self.send(redirect_to_instance), flash: { success: t("#{controller_name}.single") + ' foi atualizado com sucesso.' }
+      redirect_to self.send(redirect_to_instance), flash: { success: translate_flash('success') }
     else
       render :edit
     end
@@ -60,7 +61,7 @@ class GenericController < ApplicationController
     set_instance
     authorize @instance
     if @instance.destroy
-      redirect_to self.send(redirect_to_index), flash: { success: t("#{controller_name}.single") + ' foi removido com sucesso.' }
+      redirect_to self.send(redirect_to_index), flash: { success: translate_flash('success') }
     else
       render :index
     end
@@ -71,6 +72,10 @@ class GenericController < ApplicationController
     # def update_resource(resource, params)
     #   resource.update_without_password(params)
     # end
+
+    def underscore_model_class
+      @instance.class.name.underscore.pluralize
+    end
 
   private
 

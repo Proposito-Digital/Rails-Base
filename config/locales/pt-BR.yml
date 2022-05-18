@@ -1,5 +1,7 @@
 ---
 pt-BR:
+  language_name: "Português"
+  flag_icon: flag-icon-br
   numbers:
     one: '1 min'
     two: '2 min'
@@ -48,8 +50,9 @@ pt-BR:
     - Sábado
     formats:
       default: "%d/%m/%Y"
-      long: "%d de %B de %Y"
-      short: "%d de %B"
+      long: "%d de %{month_name} de %Y"
+      longw: "%{week_name}, %d de %{month_name} de %Y"
+      short: "%d de %{month_name}"
     month_names:
     - 
     - Janeiro
@@ -212,10 +215,10 @@ pt-BR:
       words_connector: ", "
   time:
     am: ''
+    hour_format: "%H:%M"
     formats:
-      default: "%d/%m/%Y %H:%M"
-      long: "%d de %B de %Y, %H:%M"
-      short: "%d de %B, %H:%M"
+      dt_default: "%{date} %{time}"
+      dt_at: "%{date} às %{time}"
     pm: ''
   activerecord:
     errors:
@@ -228,6 +231,8 @@ pt-BR:
           attributes:
             tenant: 
               required: "não pode ficar em branco"
+            email:
+              not_found: "E-mail não cadastrado"
         meet:
           attributes:
             group: 
@@ -364,6 +369,130 @@ pt-BR:
         other: "Mostrando todos os %{count} registros encontrados"
       multi_page: "Mostrando registros %{from} até %{to} de %{count} no total"
       multi_page_html: "Mostrando registros %{from} até %{to} de %{count} no total"
+  controllers:
+    generic:
+      create:
+        success: '%{controller_name} foi criado com sucesso.'
+      update:
+        success: '%{controller_name} foi atualizado com sucesso.'
+      destroy:
+        success: '%{controller_name} foi removido com sucesso.'
+        danger: "Erro ao deletar %{controller_name}"
+    admin:
+      tenants:
+        change_current_tenant:
+          success: "Tenant mudado com sucesso."
+          danger: "Erro ao mudar tenant"
+        disable_current_tenant:
+          success: "Tenant mudado com sucesso."
+          danger: "Erro ao mudar tenant"
+      users:
+        update_password:
+          success: "Senha alterada com sucesso"
+          danger: "Erro ao editar senha"
+        update_all_passwords:
+          success: "Senha alterada com sucesso"
+          danger: "Erro ao editar senha"
+  views:
+    application:
+      shared:
+        save: "Salvar"
+        show: "Visualizar"
+        back: "Voltar"
+        add: "Adicionar %{model_name}"
+        new_title: 'Novo %{model_name}'
+        edit: "Editar"
+        search_placeholder: 'Pesquisar %{model_name}'
+        remove: "Remover"
+        remove_title: "Remover %{model_name}"
+        click_here: "Clique aqui"
+        cancel: Cancelar
+        invite: "Convidar"
+        copy: 'Copiar'
+        actions: 'Ações'
+        yes_display: 'Sim'
+        no_display: 'Não'
+        date_begin_placeholder: 'Data inicial'
+        date_end_placeholder: 'Data final'
+        add_file: 'Adicionar Arquivo'
+        pre_show: 'Pré-visualizar'
+        enter: 'Entrar'
+        submit: 'Enviar'
+        email_placeholder: "Digite o e-mail"
+        password_placeholder: "Digite a senha"
+        email: "E-mail"
+        password: "Senha"
+        user_profile:
+          edit_profile: "Editar perfil"
+          change_password: "Alterar senha"
+          exit: "Sair"
+        sidebar_menu:
+          home: 'Início'
+        modal_invite:
+          title: 'Convite para %{name}'
+          subtitle: 'Convidar %{name} para o Prozital?'
+        state_placeholder: 'Selecione um estado'
+      actions:
+        index:
+          no_instances: Ainda não existem %{model_name} registrados
+          new_instance: Clique abaixo para criar um novo %{model_name}
+          new_button: "Criar %{model_name}"
+        destroy:
+          title_modal: "Remover %{model_name}"
+          subtitle_modal: Deseja realmente remover o(a) %{model_name}?
+    admin:
+      users:
+        shared:
+          change_password_modal:
+            title: 'Editar senha'
+            current_password: 'Senha atual'
+            new_password: 'Nova senha'
+            confirm_new_password: 'Redigite a nova senha'
+        actions:
+          new:
+            tenant_placeholder: 'Selecione o tenant do Usuário'
+            role_placeholder: 'Selecione o Perfil do Usuário'
+    devise:
+      sessions:
+        actions:
+          new:
+            title: Entrar no Rails Base
+            subtitle: "Digite seu email & senha para entrar"
+            forgot_password: "Esqueceu a senha?"
+            login: "Entrar"
+      passwords:
+        actions:
+          new:
+            title: "Recuperar senha"
+            subtitle: "Digite seu e-mail para receber instruções sobre como recuperar a senha"
+    custom_devise:
+      registrations:
+        actions:
+          new:
+            title: "Cadastre-se no Rails Base"
+            has_registration: "Já possui cadastro? Entre aqui!"
+    pages:
+      actions:
+        home:
+          title: "Bem-vindo ao Rails Base versão %{app_version}."
+          go_to_administration: "Administração"
+          go_further: "Ir para o admin"
+  emails:
+    reset_password_instructions:
+      title: "Olá %{email}!"
+      change_password_solicited: "Uma alteração de senha foi requisitada . Você pode fazer isso pelo link abaixo."
+      change_password_link: "Alterar a senha"
+      ignore: "Se você não fez esse pedido, por favor ignore esse email."
+      password_not_change: "Sua senha não mudará enquanto voĉe não acessar o link a cima e criar uma nova senha."
+    unlock_instructions:
+      title: "Olá %{email}"
+      unsucessfully_sign_ups: "Sua conta foi bloqueada devido ao excessivo número de tentativas de login"
+      link_below: "Clique no link abaixo para desbloquear sua conta:"
+      link: "Desbloquear minha conta"
+    confirmation_instructions:
+      title: "Bem-vindo %{email}"
+      can_confirm: "Você pode confirmar sua conta através do link abaixo"
+      link: "Confirmar minha conta"
   entities:
     single: 'Módulo'
     plural: 'Módulos'

@@ -3,13 +3,13 @@ class ApplicationController < ActionController::Base
   require 'securerandom'
   # autorization system
   include Pundit::Authorization
+  include LocaleConcerns
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :get_module_active
   before_action :set_subscriber_cookies
-
 
   def get_module_active
     @module_active = params[:controller]

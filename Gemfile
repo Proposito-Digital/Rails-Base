@@ -74,12 +74,12 @@ group :test do
   # A set of RSpec matchers for testing Pundit authorisation policies. The matcher syntax was inspired by this excellent blog post from Thunderbolt Labs.
   gem 'pundit-matchers', '1.7.0'
   # Capybara is an integration testing tool for rack based web applications. It simulates how a user would interact with a website
-  gem 'capybara', '3.36.0'
+  gem 'capybara', '3.37.1'
   # Adds realtime console.log output to Capybara + Selenium + Chromedriver
-  # [TODO] WATING NEW VERISON PARA REMOVER LOGS DE DEPRECATIONS:  WARN Selenium [DEPRECATION] Manager#logs is deprecated. Use Chrome::Driver#logs instead.
-  gem 'capybara-chromedriver-logger', '0.3.0'
+  # fork from original project to avoid deprecating warnning
+  gem 'capybara-chromedriver-logger', git: 'https://github.com/Proposito-Digital/capybara-chromedriver-logger'
   # WebDriver is a tool for writing automated tests of websites. It aims to mimic the behaviour of a real user, and as such interacts with the HTML of the application.
-  gem 'selenium-webdriver', '4.1.0'
+  gem 'selenium-webdriver', '4.3.0'
   # Strategies for cleaning databases. Can be used to ensure a clean slate for testing.
   gem 'database_cleaner', '2.0.1'
 end

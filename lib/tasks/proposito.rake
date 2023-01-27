@@ -46,5 +46,29 @@ namespace :proposito do
 			Rake::Task["assets:precompile"].invoke
 		end
 	end
+  namespace :gems do
+		desc 'Gets all gems: rake proposito:gems:updatecheck'
+		task updatecheck: :environment do
+			p '[get gems from Femfile]'
+			gems = Bundler::Definition.build('Gemfile', nil, {}).dependencies
+
+      gems.each do |gem_file|
+        gem_latest_version = %x[ gem list '^#{gem_file.name.to_s}$' -r ]
+        gem_latest_version = gem_latest_version[/\(.*\)/][1..-2]
+        gem_active_version = gem_file.requirement.to_s.gsub('= ', '')
+
+        if gem_active_version != gem_latest_version && gem_active_version != ">0"
+          p "GEM NAME: " + gem_file.name.to_s
+          p "GEM VERSION: " + gem_active_version
+          p "GEM LATEST: " + gem_latest_version
+        else
+          p gem_file.name + ": ok "
+        end
+
+        p "------------------------"
+      end
+
+		end
+	end
 
 end

@@ -11,46 +11,46 @@ source 'http://rubygems.org'
 
 ruby '3.1.1'
 # Rails framework
-gem 'rails', '7.0.2.3'
+gem 'rails', '7.0.4.2'
 # New way to import jS 
-gem 'importmap-rails', '1.0.3'
+gem 'importmap-rails', '1.1.5'
 # server assets like images
 gem 'sprockets-rails', '3.4.2', :require => 'sprockets/railtie'
 # process SCSS files
 gem "sassc-rails", '2.1.2'
 # Upgrading from Rails UJS / Turbolinks to Turbo
-gem 'turbo-rails', '1.0.1'
+gem 'turbo-rails', '1.3.2'
 # main authorization lib
 gem 'devise', '4.8.1'
 # Pundit provides a set of helpers which guide you in leveraging regular Ruby classes and object oriented design patterns to build a simple, robust and scalable authorization system.
-gem 'pundit', '2.2.0'
+gem 'pundit', '2.3.0'
 # A simple ActiveRecord mixin to add conventions for flagging records as discarded.
 gem 'discard', '1.2.1'
 # Use postgres
-gem 'pg', '1.3.3'
+gem 'pg', '1.4.5'
 # Pagination lig
 gem 'will_paginate', '3.3.1'
 # This is a JSON implementation as a Ruby extension in C.
-gem 'json', '2.6.1'
-#ActiveModel::Serializers allows you to generate your JSON in an object-oriented and convention-driven manner.
+gem 'json', '2.6.3'
+# ActiveModel::Serializers allows you to generate your JSON in an object-oriented and convention-driven manner.
 gem 'active_model_serializers', '0.10.13'
 # SDoc is an HTML template built on top of the RDoc documentation generator for Ruby code. COMMAND: sdoc projectdir
-gem 'sdoc', '2.3.1', group: :doc
+gem 'sdoc', '2.6.0', group: :doc
 # An ActiveRecord plugin for managing lists.
 gem 'acts_as_list', '1.0.4'
 #High-level wrapper for processing images for the web with ImageMagick or libvips.
 gem 'image_processing', '1.12.2'
 #Multi-tanancy gem acts_as_tenant
-gem 'acts_as_tenant', '0.5.1'
+gem 'acts_as_tenant', '0.6.1'
 #A Ruby client that tries to match Redis' API one-to-one, while still providing an idiomatic interface
-gem 'redis', '4.6.0'
+gem 'redis', '5.0.6'
 #Simple, efficient background processing for Ruby.
-gem 'sidekiq', '6.4.1'
+gem 'sidekiq', '7.0.3'
 # To Fix mimemagic problem
 gem 'mimemagic', '0.4.3'
 # Great Ruby debugging companion: pretty print Ruby objects to visualize their structure.
 gem 'awesome_print', '1.9.2'
-#A fast, safe and extensible Markdown to (X)HTML parser
+# A fast, safe and extensible Markdown to (X)HTML parser
 gem 'redcarpet', '3.5.1'
 #--------------------------------------------------------------------------------
 
@@ -61,25 +61,25 @@ group :development, :test do
   # factory_bot provides a framework and DSL for defining and using factories - less error-prone, more explicit, and all-around easier to work with than fixtures.
   gem 'factory_bot_rails', '6.2.0'
   # Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
-  gem 'faker', '2.19.0'
+  gem 'faker', '3.1.0'
 end
 
 group :test do
   # SimpleCov is a code coverage analysis tool for Ruby.
-  gem 'simplecov', '0.21.2', :require => false, :group => :test
+  gem 'simplecov', '0.22.0', :require => false, :group => :test
   # testing framework for Rails
-  gem 'rspec-rails', '5.1.0'
+  gem 'rspec-rails', '6.0.1'
   # Shoulda Matchers provides RSpec- and Minitest-compatible one-liners that test common Rails functionality. These tests would otherwise be much longer, more complex, and error-prone.
-  gem 'shoulda-matchers', '5.1.0'
+  gem 'shoulda-matchers', '5.3.0'
   # A set of RSpec matchers for testing Pundit authorisation policies. The matcher syntax was inspired by this excellent blog post from Thunderbolt Labs.
-  gem 'pundit-matchers', '1.7.0'
+  gem 'pundit-matchers', '1.8.4'
   # Capybara is an integration testing tool for rack based web applications. It simulates how a user would interact with a website
-  gem 'capybara', '3.37.1'
+  gem 'capybara', '3.38.0'
   # Adds realtime console.log output to Capybara + Selenium + Chromedriver
   # fork from original project to avoid deprecating warnning
   gem 'capybara-chromedriver-logger', git: 'https://github.com/Proposito-Digital/capybara-chromedriver-logger'
   # WebDriver is a tool for writing automated tests of websites. It aims to mimic the behaviour of a real user, and as such interacts with the HTML of the application.
-  gem 'selenium-webdriver', '4.3.0'
+  gem 'selenium-webdriver', '4.8.0'
   # Strategies for cleaning databases. Can be used to ensure a clean slate for testing.
   gem 'database_cleaner', '2.0.1'
 end
@@ -102,6 +102,6 @@ group :development do
 end
 
 group :production, :teste do
-  # production web server
-  gem 'puma', '5.6.2'
+  # production weBundlerb server
+  gem 'puma', '6.0.2'
 end

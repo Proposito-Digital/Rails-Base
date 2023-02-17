@@ -13,6 +13,7 @@ pin "vuex", to: "https://cdn.jsdelivr.net/npm/vuex@4.0.0/dist/vuex.esm-browser.j
 
 # Thidr Party Libs
 pin "vue-multiselect", to: "https://cdn.jsdelivr.net/npm/vue-multiselect@3.0.0-alpha.1/dist/vue-multiselect.esm.min.js"
+pin "vue-maska", to: "https://cdn.jsdelivr.net/npm/maska@2.1.6/dist/maska.min.js"
 
 # Custom JS
 pin "application"

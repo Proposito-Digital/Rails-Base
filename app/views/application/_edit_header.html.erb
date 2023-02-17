@@ -6,6 +6,6 @@
   </div>
   <div>
     <a href=<%= "#{instance_show_path(instance)}"%> class="btn btn-outline-secondary" ><%=translate_view_shared("show")%></a>
-    <button type="submit" @click="submitForm('<%= 'edit_' + instance.class.name.underscore + '_' + instance.id.to_s %>')" class="btn btn-primary"><%=translate_view_shared("save")%></button>
+    <button type="submit" @click="submitForm('<%= 'edit_' + instance.class.name.underscore.sub("/", "_") + '_' + instance.id.to_s %>')" class="btn btn-primary"><%=translate_view_shared("save")%></button>
   </div>
 </div>

@@ -103,5 +103,5 @@ end
 
 group :production, :teste do
   # production weBundlerb server
-  gem 'puma', '6.0.2'
+  gem 'puma', '6.1.0'
 end

@@ -17,6 +17,7 @@ document.addEventListener('turbo:load', () => {
   const element = document.getElementById('appAdmin');
   if (element != null) {
     const vueApp = createVueApp();
+    vueApp.config.compilerOptions.whitespace = 'preserve';
     vueApp.mount('#appAdmin');
   }
 })

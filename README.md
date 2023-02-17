@@ -64,7 +64,7 @@ check the file config/importmap.rb
 
 An approachable, performant and versatile framework for building web user interfaces.
 
-## Bootstrap 5.2.3 https://getbootstrap.com/
+## Bootstrap 5.1.3 https://getbootstrap.com/
 
 Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
 

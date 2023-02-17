@@ -7,6 +7,7 @@ import globalMethodsPlugin from './plugins/globalMethods';
 // Import Third Party Libs
 import TurbolinksAdapter from 'vue-turbolinks';
 import Vuex from 'vuex';
+import { vMaska } from 'vue-maska'
 import VueMultiselect from 'vue-multiselect';
 
 // Import Global components
@@ -35,6 +36,7 @@ const createVueApp = ()=>{
   // Load Third Party Libs
   app.use(TurbolinksAdapter);
   app.use(Vuex);
+  app.directive('maska', vMaska);
 
   // Load Third Party components
   app.component('vue-multiselect', VueMultiselect);

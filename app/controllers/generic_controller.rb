@@ -80,15 +80,19 @@ class GenericController < ApplicationController
   private
 
     def redirect_to_index
-      "#{controller_name}_path"
+      controller = params[:controller]
+      namespace = controller.gsub("/","_")[6..]
+      "#{namespace}_path"
     end
 
     def redirect_to_instance
-      "#{@model}_path".downcase
+      controller = params[:controller]
+      namespace = controller.singularize.gsub("/","_")[6..]
+      "#{namespace}_path"
     end
 
     def set_model_class
-      @model = controller_name.classify.constantize
+      @model = params[:controller].gsub("admin/","").classify.constantize
     end
   
     # Use callbacks to share common setup or constraints between actions.
@@ -111,7 +115,7 @@ class GenericController < ApplicationController
     end
 
     def default_param_required
-      @model.to_s.downcase.to_sym
+      @model.to_s.underscore.sub("/", "_").to_sym
     end
 
     def default_params_permited

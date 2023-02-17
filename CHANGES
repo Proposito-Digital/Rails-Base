@@ -1,3 +1,7 @@
+Version 1.0.2:
+ - Maska, Generic Controller fixes, Template application fixes, v-cloak fixes (#8)
+ - [FIX] loss of white spaces
+
 Version 1.0.1:
  - Update Rails, Bootstrap, Gems and Bootstrap Icons. Create new rake task proposito:gems:updatecheck
  - [Update GEM] selenium-webdriver, capybara-chromedriver-logger and capybara

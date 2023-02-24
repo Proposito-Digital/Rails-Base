@@ -78,5 +78,7 @@ module Base
     config.action_dispatch.rescue_responses.merge!(
       'AuthorizationException' => :unauthorized
     )
+
+    config.paths['config/routes.rb'].concat Dir[Rails.root.join("config/routes/**/*.rb")].sort
   end
 end

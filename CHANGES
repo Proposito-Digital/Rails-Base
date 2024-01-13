@@ -1,3 +1,7 @@
+Version 1.1.0:
+ - [Update 2024] Rails and Gems, Bootstrap and Icons, Vue and JS. Create new rake task proposito:gems:outdated.
+ - adds configuration to support routes in differents files and namespaces. (#9)
+
 Version 1.0.2:
  - Maska, Generic Controller fixes, Template application fixes, v-cloak fixes (#8)
  - [FIX] loss of white spaces

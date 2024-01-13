@@ -52,7 +52,7 @@ describe "integration teste for Admin::user", :type => :feature do
     expect(find_field('user[roles]', disabled: true).value).to eq "admin"
   end
 
-  xit "delete user" do
+  it "delete user" do
     new_user = create :user,tenant: tenant
     visit admin_users_path()
     within("#tr_#{new_user.class.name}_#{new_user.id}") do
@@ -83,13 +83,13 @@ describe "integration teste for Admin::user", :type => :feature do
     visit admin_users_path()
     
     click_link 'Nome'
-    expect(page).to have_current_path(admin_users_path(sort_direction: 'asc', sort_column: 'users.name', locale: "pt-BR"))
+    expect(page).to have_current_path(admin_users_path(sort_direction: 'asc', sort_column: 'users.name'))
     users = User.order(name: :asc).all()
     expect(page).to have_css('table > tbody > tr:nth-child(1) > td:nth-child(1)', text: users[0].name)
     
     click_link 'Nome'
     users = User.order(name: :desc).all()
-    expect(page).to have_current_path(admin_users_path(sort_direction: 'desc', sort_column: 'users.name', locale: "pt-BR"))
+    expect(page).to have_current_path(admin_users_path(sort_direction: 'desc', sort_column: 'users.name'))
     expect(page).to have_css('table > tbody > tr:nth-child(1) > td:nth-child(1)', text: users[0].name)
   end
 

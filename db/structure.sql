@@ -204,7 +204,7 @@ ALTER SEQUENCE public.tenants_id_seq OWNED BY public.tenants.id;
 
 CREATE TABLE public.user_roles (
     id bigint NOT NULL,
-    user_id integer NOT NULL,
+    user_id bigint NOT NULL,
     role integer,
     deleted_at timestamp without time zone,
     created_at timestamp(6) without time zone NOT NULL,

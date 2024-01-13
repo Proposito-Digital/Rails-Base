@@ -27,21 +27,21 @@ Capybara.register_driver :headless_chrome do |app|
   options.add_argument('--no-sandbox')
   options.add_argument('--headless')
   options.add_argument('--disable-gpu')
-  options.add_argument('--window-size=1280,1024')
+  options.add_argument('--window-size=1024,786')
   options.add_argument('--disable-features=VizDisplayCompositor')
-
-  Capybara::Selenium::Driver.new(app, browser: :chrome, capabilities: [options])
+  
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
 
 Capybara.register_driver :headless_chrome_logging do |app|
   options.add_argument('--no-sandbox')
   options.add_argument('--headless')
   options.add_argument('--disable-gpu')
-  options.add_argument('--window-size=1280,1024')
+  options.add_argument('--window-size=1024,786')
   options.add_argument('--disable-features=VizDisplayCompositor)')
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome( "goog:loggingPrefs": { browser: 'ALL' } )
 
-  Capybara::Selenium::Driver.new(app, browser: :chrome, capabilities: [options, capabilities])
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options, desired_capabilities: capabilities)
 end
 
 Capybara.javascript_driver = :headless_chrome

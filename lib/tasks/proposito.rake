@@ -47,9 +47,15 @@ namespace :proposito do
 		end
 	end
   namespace :gems do
+    desc 'Show bundle outdated: rake proposito:gems:outdated'
+		task outdated: :environment do
+			p '[bundle outdated]'
+      print %x[ bundle outdated --only-explicit ]
+		end
+
 		desc 'Gets all gems: rake proposito:gems:updatecheck'
 		task updatecheck: :environment do
-			p '[get gems from Femfile]'
+			p '[get gems from Gemfile]'
 			gems = Bundler::Definition.build('Gemfile', nil, {}).dependencies
 
       gems.each do |gem_file|

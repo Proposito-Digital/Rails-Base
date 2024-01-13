@@ -31,7 +31,7 @@ class Admin::TenantsController < BaseAdminController
     rescue ActiveRecord::InvalidForeignKey
       redirect_to admin_tenants_path, flash:{danger: translate_flash('danger')}
     else
-      redirect_to self.send(redirect_to_index), :flash =>{:success => translate_flash('danger') }
+      redirect_to self.send(redirect_to_index), :flash =>{:success => translate_flash('success') }
     end
   end
   

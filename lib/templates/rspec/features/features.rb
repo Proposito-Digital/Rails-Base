@@ -45,7 +45,7 @@ describe "integration teste for <%= singular_table_name %>", :type => :feature d
     expect(page).to have_xpath("//input[@value='#{<%= singular_table_name %>.<%= attributes_names.first %>}']") 
   end
 
-  xit "delete <%= singular_table_name %>" do
+  it "delete <%= singular_table_name %>" do
     create_list(:<%= singular_table_name %>, 2)
     <%= plural_table_name %> = <%= class_name %>.all()
     visit admin_<%= plural_table_name %>_path

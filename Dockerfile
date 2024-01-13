@@ -1,7 +1,7 @@
-FROM ruby:3.1.1-slim-buster
+FROM ruby:3.2.2-slim-bookworm
 
-LABEL MAINTAINER Diogo Caetano <diogo.caetano.alves@gmail.com>
-# Last update 03/2022
+LABEL MAINTAINER Diogo Caetano <diogo@proposito.digital>
+# Last update 02/2024
 
 # Install essential Linux packages
 RUN apt-get clean
@@ -12,20 +12,21 @@ RUN apt-get install -y libpq-dev libnotify-bin xosd-bin nano curl wget unzip
 
 # Chrome
 # This is a complete list of versions https://www.ubuntuupdates.org/package/google_chrome/stable/main/base/google-chrome-stable
-ARG CHROME_VERSION="99.0.4844.84-1"
+ARG CHROME_VERSION="119.0.6045.105-1"
 RUN wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb
 RUN dpkg -i google-chrome-stable_${CHROME_VERSION}_amd64.deb; apt-get -fy install
-# Chrome Driver list of versions https://chromedriver.chromium.org/downloads
-ARG CHROME_DRIVER_VERSION="99.0.4844.51"
-RUN wget https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip
-RUN unzip chromedriver_linux64.zip
-RUN mv chromedriver /usr/bin/chromedriver
+# Chrome Driver list of versions https://googlechromelabs.github.io/chrome-for-testing/
+ARG CHROME_DRIVER_VERSION="119.0.6045.105"
+RUN wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CHROME_DRIVER_VERSION}/linux64/chromedriver-linux64.zip
+RUN unzip chromedriver-linux64.zip
+RUN mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
 RUN chown root:root /usr/bin/chromedriver
 RUN chmod +x /usr/bin/chromedriver
 
 # install posgtres client
-ARG POSTGRESQL_VERSION="14"
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+ARG POSTGRESQL_VERSION="16"
+ARG DEBIAN_VERSION="bookworm"
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ ${DEBIAN_VERSION}-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 RUN apt-get update -qq
 RUN apt install -y postgresql-client-${POSTGRESQL_VERSION}

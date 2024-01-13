@@ -45,7 +45,7 @@ describe "integration teste for Admin::tenant", type: :feature do
         expect(find_field('tenant[slug]', disabled: true).value).to eq tenant.slug
     end
     
-    xit "delete tenant" do
+    it "delete tenant" do
         new_tenant = create :tenant
         visit admin_tenants_path() 
         within("#tr_Tenant_#{new_tenant.id}") do
@@ -75,13 +75,13 @@ describe "integration teste for Admin::tenant", type: :feature do
         visit admin_tenants_path() 
 
         click_link 'Nome'
-        expect(page).to have_current_path(admin_tenants_path(sort_direction: 'asc', sort_column: 'tenants.name', locale: "pt-BR"))
+        expect(page).to have_current_path(admin_tenants_path(sort_direction: 'asc', sort_column: 'tenants.name'))
         tenants = Tenant.order(name: :asc).all()
         expect(page).to have_css('table > tbody > tr:nth-child(1) > td:nth-child(1)', text: tenants[0].name)
         
         click_link 'Nome'
         tenants = Tenant.order(name: :desc).all()
-        expect(page).to have_current_path(admin_tenants_path(sort_direction: 'desc', sort_column: 'tenants.name', locale: "pt-BR"))
+        expect(page).to have_current_path(admin_tenants_path(sort_direction: 'desc', sort_column: 'tenants.name'))
         expect(page).to have_css('table > tbody > tr:nth-child(1) > td:nth-child(1)', text: tenants[0].name)
     end
 

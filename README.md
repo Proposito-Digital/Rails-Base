@@ -33,11 +33,11 @@ $ . bumpversion.sh
 ~~~
 
 # Core
-## Ruby 3.1.1 https://www.ruby-lang.org/en/
+## Ruby 3.2.2 https://www.ruby-lang.org/en/
 
 A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.
 
-## Ruby on Rails 7.0.4.2 https://rubyonrails.org/
+## Ruby on Rails 7.1.2 https://rubyonrails.org/
 
 Rails has united and cultivated a strong tribe around a wide set of heretical thoughts about the nature of programming and programmers. Understanding these thoughts will help you understand the design of the framework.
 
@@ -64,11 +64,11 @@ check the file config/importmap.rb
 
 An approachable, performant and versatile framework for building web user interfaces.
 
-## Bootstrap 5.1.3 https://getbootstrap.com/
+## Bootstrap 5.3.2 https://getbootstrap.com/
 
 Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
 
-## Bootstrap Icons 1.10.0 https://icons.getbootstrap.com/
+## Bootstrap Icons 1.11.0 https://icons.getbootstrap.com/
 
 Free, high quality, open source icon library with over 1,600 icons. Include them anyway you like—SVGs, SVG sprite, or web fonts. Use them with or without Bootstrap in any project.
 

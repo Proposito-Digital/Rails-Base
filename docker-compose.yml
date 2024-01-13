@@ -9,7 +9,7 @@ services:
     ports:
       - "6379:6379"
   db:
-    image: postgres:14.2-alpine
+    image: postgres:16.1-alpine
     environment:
        - POSTGRES_USER=postgres
        - POSTGRES_PASSWORD=postgres
